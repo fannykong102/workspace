@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
     private EditText height;
     private  EditText weight;
@@ -29,15 +31,23 @@ public class MainActivity extends AppCompatActivity {
             double h = Double.parseDouble(height.getText().toString());
             double w = Double.parseDouble(weight.getText().toString());
             double bmi = w / ((h / 100.0) * (h / 100.0));
+            String txt = "";
             if(bmi < 18.5){
-                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您太輕了!");
+//                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您太輕了!");
+                txt = "\n \t 您太輕了!";
             }
             else if (bmi < 25){
-                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 標準體重,繼續保持!");
+//                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 標準體重,繼續保持!");
+                txt = "\n \t 標準體重,繼續保持!";
             }
             else{
-                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您過重了喔");
+//                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您過重了喔");
+                txt = "\n \t 您過重了喔";
             }
+
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+
+            show_bmi.setText("BMI : " + decimalFormat.format(bmi) + txt);
         }
     }
 }
