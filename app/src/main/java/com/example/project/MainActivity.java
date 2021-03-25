@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -24,14 +25,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calBMI(View view) {
-        if(height.getText().toString().isEmpty() || weight.getText().toString().isEmpty()){
-            show_bmi.setText("請輸入正確的身高或體重");
-        }
-        else {
-            double h = Double.parseDouble(height.getText().toString());
-            double w = Double.parseDouble(weight.getText().toString());
-            double bmi = w / ((h / 100.0) * (h / 100.0));
-            String txt = "";
+        double bmi = Double.parseDouble(bmiValue());
+
+        String txt = "";
             if(bmi < 18.5){
 //                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您太輕了!");
                 txt = "\n \t 您太輕了!";
@@ -45,9 +41,27 @@ public class MainActivity extends AppCompatActivity {
                 txt = "\n \t 您過重了喔";
             }
 
-            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            show_bmi.setText("BMI : " + String.valueOf(bmi) + txt);
 
-            show_bmi.setText("BMI : " + decimalFormat.format(bmi) + txt);
+    }
+
+    private String bmiValue() {
+        if(height.getText().toString().isEmpty() || weight.getText().toString().isEmpty()){
+            show_bmi.setText("請輸入正確的身高或體重");
+            return "0.0";
         }
+        else {
+            double h = Double.parseDouble(height.getText().toString());
+            double w = Double.parseDouble(weight.getText().toString());
+            double bmi = w / ((h / 100.0) * (h / 100.0));
+
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            return decimalFormat.format(bmi);
+        }
+    }
+
+    public void showToast(View view) {
+        String bmi = bmiValue();
+        Toast.makeText(this, bmi, Toast.LENGTH_SHORT).show();
     }
 }
