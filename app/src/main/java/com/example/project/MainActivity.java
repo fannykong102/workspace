@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText height;
     private  EditText weight;
     private TextView show_bmi;
+    private  ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         height = findViewById(R.id.edtxHeight);
         weight = findViewById(R.id.edtxWeight);
         show_bmi = findViewById(R.id.txBMI);
+        imageView = findViewById(R.id.imV);
 
     }
 
@@ -31,14 +34,17 @@ public class MainActivity extends AppCompatActivity {
             if(bmi < 18.5){
 //                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您太輕了!");
                 txt = "\n \t 您太輕了!";
+                imageView.setImageResource(R.drawable.bmi1);
             }
             else if (bmi < 25){
 //                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 標準體重,繼續保持!");
                 txt = "\n \t 標準體重,繼續保持!";
+                imageView.setImageResource(R.drawable.bmi2);
             }
             else{
 //                show_bmi.setText("BMI : " + String.valueOf(bmi) + "\n \t 您過重了喔");
                 txt = "\n \t 您過重了喔";
+                imageView.setImageResource(R.drawable.bmi3);
             }
 
             show_bmi.setText("BMI : " + String.valueOf(bmi) + txt);
