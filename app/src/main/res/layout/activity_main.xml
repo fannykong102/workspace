@@ -97,4 +97,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txBMI"
         app:srcCompat="@android:drawable/divider_horizontal_dark" />
+
+    <ImageButton
+        android:id="@+id/btResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:onClick="toResult"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btToast"
+        app:layout_constraintVertical_bias="0.707"
+        app:srcCompat="@android:drawable/arrow_down_float" />
 </androidx.constraintlayout.widget.ConstraintLayout>

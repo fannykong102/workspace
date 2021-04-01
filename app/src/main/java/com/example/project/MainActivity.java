@@ -2,6 +2,7 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -69,5 +70,15 @@ public class MainActivity extends AppCompatActivity {
     public void showToast(View view) {
         String bmi = bmiValue();
         Toast.makeText(this, bmi, Toast.LENGTH_SHORT).show();
+    }
+
+    public void toResult(View view) {
+        Intent intent = new Intent(this, ResultActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("BMI", bmiValue());
+        bundle.putInt("Height", Integer.parseInt(height.getText().toString()));
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
