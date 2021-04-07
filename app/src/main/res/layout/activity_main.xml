@@ -56,12 +56,12 @@
         android:id="@+id/btCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:onClick="calBMI"
         android:text="@string/BMICal"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.31"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtxWeight" />
 
@@ -80,8 +80,8 @@
         android:id="@+id/btToast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:onClick="showToast"
         android:text="Toast"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -110,4 +110,16 @@
         app:layout_constraintTop_toBottomOf="@+id/btToast"
         app:layout_constraintVertical_bias="0.707"
         app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <Button
+        android:id="@+id/btAlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="show_alertDialog"
+        android:text="AlertDialog"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@+id/btCalculate"
+        app:layout_constraintTop_toTopOf="@+id/btCalculate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

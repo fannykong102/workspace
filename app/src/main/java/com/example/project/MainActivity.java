@@ -2,6 +2,8 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -80,5 +82,27 @@ public class MainActivity extends AppCompatActivity {
         bundle.putInt("Height", Integer.parseInt(height.getText().toString()));
         intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    public void show_alertDialog(View view) {
+        String[] color = {"Red", "Green", "Blue"};
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Your BMI")
+                //.setMessage(bmiValue())
+                .setItems(color, null)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, "AAAA", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setIcon(R.drawable.ic_launcher_foreground)
+                .show();
     }
 }
