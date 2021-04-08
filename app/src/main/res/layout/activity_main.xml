@@ -122,4 +122,16 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toStartOf="@+id/btCalculate"
         app:layout_constraintTop_toTopOf="@+id/btCalculate" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="84dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="108dp"
+        android:text="RecycleView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btAlertDialog" />
 </androidx.constraintlayout.widget.ConstraintLayout>
