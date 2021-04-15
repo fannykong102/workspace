@@ -105,4 +105,9 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(R.drawable.ic_launcher_foreground)
                 .show();
     }
+
+    public void toList(View view) {
+        Intent intent = new Intent(this, BmiActivity.class);
+        startActivity(intent);
+    }
 }

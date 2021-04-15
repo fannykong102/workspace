@@ -1,14 +1,6 @@
 package com.example.project;
 
 public class personData {
-    double height;
-    double weight;
-
-    public personData(double height, double weight) {
-        this.height = height;
-        this.weight = weight;
-    }
-
     public double getHeight() {
         return height;
     }
@@ -24,4 +16,13 @@ public class personData {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
+    public personData(double height, double weight) {
+        this.height = height;
+        this.weight = weight;
+    }
+
+    double height;
+    double weight;
+
 }
